@@ -119,7 +119,7 @@ When you POST to `/products/increase` or `/products/decrease`:
 
 5. **Start the server:**
    ```bash
-   npm start
+   npm start set in scripts with the main file name or run with node file name
    ```
 
 6. **Visit in your browser:**
