@@ -87,7 +87,14 @@ When you POST to `/products/increase` or `/products/decrease`:
 - Server/DB errors return 500 with the message.
 - Stock decrease checks for insufficient inventory and returns a relevant message.
 ##Screenshots
-![image]()
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/main/Screenshot%202025-10-05%20154359.png)
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/main/Screenshot%202025-10-05%20154419.png)
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/main/Screenshot%202025-10-05%20154435.png)
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/e44b815483b5c1fe3c1a36d80dc37e56e8493ba8/Screenshot%202025-10-05%20154516.png)
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/e44b815483b5c1fe3c1a36d80dc37e56e8493ba8/Screenshot%202025-10-05%20154531.png)
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/e44b815483b5c1fe3c1a36d80dc37e56e8493ba8/Screenshot%202025-10-05%20154556.png)
+![image](https://github.com/ASHENEE123/inventory_management_system/blob/e44b815483b5c1fe3c1a36d80dc37e56e8493ba8/Screenshot%202025-10-05%20154904.png)
+
 
 
 
