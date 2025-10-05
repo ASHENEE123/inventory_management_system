@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #34495e;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #2980b9;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1c5980;
+    }
+  </style>
+</head>
+<body>
+  <form method="POST" action="/products/<%= action %>">
+    <h1><%= title %></h1>
+
+    <% if (action === 'create' || action === 'update') { %>
+      <label>Stock Name:</label>
+      <input type="text" name="stock_name" required>
+
+      <label>Description:</label>
+      <input type="text" name="description" required>
+
+      <label>Quantity:</label>
+      <input type="number" name="quantity" min="0" required>
+    <% } else { %>
+      <label>Select Product:</label>
+      <select name="stock_name" required>
+        <% products.forEach(product => { %>
+          <option value="<%= product.stock_name %>"><%= product.stock_name %></option>
+        <% }) %>
+      </select>
+    <% } %>
+
+    <% if (action === 'increase' || action === 'decrease') { %>
+      <label>Amount:</label>
+      <input type="number" name="amount" min="1" required>
+    <% } %>
+
+    <button type="submit">
+      <% if (action === 'create') { %>Add Product<% } %>
+      <% if (action === 'update') { %>Update Product<% } %>
+      <% if (action === 'delete') { %>Delete Product<% } %>
+      <% if (action === 'increase') { %>Increase Stock<% } %>
+      <% if (action === 'decrease') { %>Decrease Stock<% } %>
+    </button>
+  </form>
+</body>
+</html>

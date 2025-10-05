@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Low Stock Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f6fc;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c0392b; /* red-ish for low stock */
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e74c3c; /* red header for low stock */
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #fdecea; /* light red hover */
+    }
+
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Highlight quantity below threshold */
+    td:nth-child(3) {
+      font-weight: bold;
+      color: #c0392b;
+    }
+
+    @media screen and (max-width: 768px) {
+      table, th, td {
+        display: block;
+        width: 100%;
+      }
+      tr {
+        margin-bottom: 15px;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      th {
+        display: none;
+      }
+      td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+      }
+      td::before {
+        content: attr(data-label);
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Low Stock Products (Below Threshold)</h1>
+  <table>
+    <tr>
+      <th>Stock Name</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Low Threshold</th>
+    </tr>
+    <% lowStock.forEach(product => { %>
+      <tr>
+        <td data-label="Stock Name"><%= product.stock_name %></td>
+        <td data-label="Description"><%= product.description %></td>
+        <td data-label="Quantity"><%= product.quantity %></td>
+        <td data-label="Low Threshold"><%= product.low_threshold %></td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
