@@ -149,7 +149,9 @@ CREATE TABLE stock_management (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 ```
-
+##Optimzation
+Added index for fast retrieval and accessing instead of relying accesing dat
+here created on stock_name 
 ---
 
 ## 🌟 Summary
